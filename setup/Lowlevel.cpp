@@ -22,7 +22,7 @@
 
 //-----------------------------------------------------------------------------------------
 using namespace mcuf;
-using namespace mcuf::hal;
+using namespace hal;
 using namespace core;
 
 //-----------------------------------------------------------------------------------------
@@ -36,7 +36,7 @@ extern "C" void core_at32f415_interrupt_priority(void);
  * Variable
  */
 static hal::SerialPort* systemConsoleSerialPort;
-static mcuf::Console* systemConsole;
+static cli::Console* systemConsole;
   
 /* ****************************************************************************************
  * Method
@@ -88,11 +88,11 @@ void lowlevel_console(void){
   Core::gpioc.setFunction(12, false);
   systemConsoleSerialPort = new CoreSerialPort(CoreSerialPortReg::REG_UART5, 32);
   systemConsoleSerialPort->init();
-  systemConsoleSerialPort->baudrate(128000);
+  systemConsoleSerialPort->setBaudrate(128000);
   
-  systemConsole = new mcuf::ConsoleSerialPort(*systemConsoleSerialPort, 64, 512);
+  systemConsole = new ctrl::ConsoleSerialPort(*systemConsoleSerialPort, 64, 512);
   System::getRegister().setPrintStream(&systemConsole->out());
-  System::getRegister().setInputStreamBuffer(&systemConsole->in());
+  //System::getRegister().setInputStreamBuffer(&systemConsole->in());
   System::getRegister().setErrorCodeHandler(errorCodeHandler);
   
 }

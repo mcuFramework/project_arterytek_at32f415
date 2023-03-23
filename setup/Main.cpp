@@ -40,17 +40,10 @@ using mcuf::Thread;
 #include "os_cmsis_rtos/rtx/cmsis_os2.h"
 #include "os_cmsis_rtos/rtx/rtx_os.h" 
  
-mcuf::hal::GeneralPin* led[8];
-int ccc;
+hal::GeneralPin* led[8];
 /* ****************************************************************************************
  * Method
  */
-
-void thread_loop(void *argument){
-  for(;;){
-    ++ccc;
-  }
-}
 
 void setup(Thread* _this){
   for(int i=0; i<8; ++i){
