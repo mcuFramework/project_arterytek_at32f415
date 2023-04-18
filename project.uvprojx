@@ -10,13 +10,13 @@
       <TargetName>project</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6160000::V6.16::ARMCLANG</pCCUsed>
+      <pCCUsed>6180000::V6.18::ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>-AT32F415R8T7</Device>
           <Vendor>ArteryTek</Vendor>
-          <PackID>ArteryTek.AT32F415_DFP.2.0.4</PackID>
+          <PackID>ArteryTek.AT32F415_DFP.2.0.8</PackID>
           <Cpu>IRAM(0x20000000,0x8000) IROM(0x08000000,0x10000) CPUTYPE("Cortex-M4") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
@@ -185,6 +185,7 @@
             <RvdsVP>0</RvdsVP>
             <RvdsMve>0</RvdsMve>
             <RvdsCdeCp>0</RvdsCdeCp>
+            <nBranchProt>0</nBranchProt>
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
@@ -383,16 +384,6 @@
           <GroupName>setup</GroupName>
           <Files>
             <File>
-              <FileName>Entry.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\setup\Entry.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Entry.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\setup\Entry.h</FilePath>
-            </File>
-            <File>
               <FileName>Lowlevel.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\setup\Lowlevel.cpp</FilePath>
@@ -401,6 +392,11 @@
               <FileName>Main.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\setup\Main.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Entry.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\setup\Entry.cpp</FilePath>
             </File>
           </Files>
         </Group>

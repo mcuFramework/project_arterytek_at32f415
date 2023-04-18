@@ -24,11 +24,12 @@
 using namespace core;
 
 //-----------------------------------------------------------------------------------------
-using mcuf::Thread;
+using sys::Thread;
 
 /* ****************************************************************************************
  * Extern
  */
+extern void lowlevel(void);
 
 /* ****************************************************************************************
  * Class
@@ -38,12 +39,13 @@ using mcuf::Thread;
  * Variable
  */
 #include "os_cmsis_rtos/rtx/cmsis_os2.h"
-#include "os_cmsis_rtos/rtx/rtx_os.h" 
- 
+#include "os_cmsis_rtos/rtx/rtx_os.h"
 hal::GeneralPin* led[8];
 /* ****************************************************************************************
  * Method
  */
+
+
 
 void setup(Thread* _this){
   for(int i=0; i<8; ++i){
@@ -63,7 +65,6 @@ void loop(Thread* _this){
     osDelay(100);
   }
 }
- 
 /* ****************************************************************************************
  * End of file
  */ 

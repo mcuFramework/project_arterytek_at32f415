@@ -52,7 +52,7 @@ static cli::Console* systemConsole;
  * @return true 
  * @return false 
  */
-bool errorCodeHandler(const void* address, ErrorCode code){
+bool errorCodeHandler(const void* address, sys::ErrorCode code){
 
   return true;
 }
@@ -62,6 +62,7 @@ bool errorCodeHandler(const void* address, ErrorCode code){
  * 
  */
 void lowlevel_basicInit(void){
+  
   Core::setSystemCoreClock(144);
   
   System::initialize();
@@ -77,6 +78,7 @@ void lowlevel_basicInit(void){
   Core::gpiod.init();
   Core::gpiof.init();
   Core::iomux.remapSWDIO(CoreIomux::MapSWDIO::JTAGDISABLE);
+  
 }
 
 /**
@@ -84,7 +86,6 @@ void lowlevel_basicInit(void){
  * 
  */
 void lowlevel_console(void){
-  
   Core::gpioc.setFunction(12, false);
   systemConsoleSerialPort = new CoreSerialPort(CoreSerialPortReg::REG_UART5, 32);
   systemConsoleSerialPort->init();

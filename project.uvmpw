@@ -14,11 +14,11 @@
 
   <project>
     <PathAndName>..\core\core.uvprojx</PathAndName>
+    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>
     <PathAndName>..\mcuf\mcuf.uvprojx</PathAndName>
-    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>
